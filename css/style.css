@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 20px solid rgb(31, 207, 40);
+    margin: auto;
+    position: relative; 
+    overflow: hidden; /* tudo que ta fora desaparece */
+    background: linear-gradient(#87CEEB,#E0F6FF);
+}
+
+.pipe{
+    position:absolute;/* para que uma imagem não interfira na outra */ 
+    bottom: 0;
+    width: 60px;
+    
+    animation: pipe-animation 1.5s  infinite linear;
+}
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;    
+}
+.jump{
+    animation: mario-jump 700ms ease-out ;   
+    
+}
+.clouds{
+    width: 450px;
+    position: absolute;
+    animation: clouds-animation 5s infinite linear;
+    right: -300px;
+}
+.menu{
+    width: 100%;
+    height: 50px;
+    border-bottom: 50px transparent;
+    padding: 10px;
+
+}
+
+/* animação do tubo */
+@keyframes pipe-animation{
+    from{
+        right: 0 ;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+/* pulo do mario */
+@keyframes mario-jump{
+    0% {
+        bottom: 0;
+    }
+    40%{
+        bottom: 140px;
+    }
+    50%{
+        bottom: 160px;
+    }
+    60%{
+        bottom: 160px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+/* nuvens */
+@keyframes clouds-animation {
+    from{
+        right: -450px;
+    }
+    to{
+        right: 100%;
+    }
+}
